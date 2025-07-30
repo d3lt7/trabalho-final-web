@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo - StrumSage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-dashboard">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="images/logo11.png" alt="Logo StrumSage">
+            <h3>Painel Admin</h3>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active">
+                    <a href="mainAdm.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="gerenciamento.html">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Gerenciar Aulas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#alunos">
+                        <i class="fas fa-users"></i>
+                        <span>Alunos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#professores">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Professores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#financeiro">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Financeiro</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#relatorios">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Relatórios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#configuracoes">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+        <!-- Top Bar -->
+        <header class="admin-header">
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="search" placeholder="Buscar...">
+            </div>
+            
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                
+                <div class="user-menu">
+                    <img src="images/admin-avatar.jpg" alt="Admin">
+                    <span>Administrador</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="dashboard-content">
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <p>Bem-vindo ao painel administrativo do StrumSage</p>
+            </div>
+
+            <!-- Estatísticas Principais -->
+            <section class="stats-overview">
+                <div class="stat-card primary">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total de Alunos</h3>
+                        <p class="stat-number">342</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 12% este mês
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card success">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Aulas Este Mês</h3>
+                        <p class="stat-number">1,285</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 8% este mês
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card warning">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Receita Mensal</h3>
+                        <p class="stat-number">R$ 45.680</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 15% este mês
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card info">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Professores Ativos</h3>
+                        <p class="stat-number">15</p>
+                        <span class="stat-change neutral">
+                            <i class="fas fa-minus"></i> Sem mudanças
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gráficos e Análises -->
+            <section class="charts-section">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Aulas por Instrumento</h3>
+                        <select class="chart-filter">
+                            <option>Este Mês</option>
+                            <option>Últimos 3 Meses</option>
+                            <option>Este Ano</option>
+                        </select>
+                    </div>
+                    <canvas id="instrumentChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Crescimento de Alunos</h3>
+                        <select class="chart-filter">
+                            <option>Últimos 6 Meses</option>
+                            <option>Este Ano</option>
+                            <option>Todo Período</option>
+                        </select>
+                    </div>
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Tabelas de Dados -->
+            <section class="data-tables">
+                <!-- Próximas Aulas -->
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>Próximas Aulas Hoje</h3>
+                        <a href="gerenciamento.html" class="view-all">Ver Todas</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Horário</th>
+                                    <th>Aluno</th>
+                                    <th>Professor</th>
+                                    <th>Instrumento</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14:00</td>
+                                    <td>Maria Silva</td>
+                                    <td>Prof. Carlos</td>
+                                    <td><i class="fas fa-guitar"></i> Violão</td>
+                                    <td><span class="badge badge-confirmado">Confirmado</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="Ver detalhes">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>15:30</td>
+                                    <td>João Pedro</td>
+                                    <td>Prof. Ana</td>
+                                    <td><i class="fas fa-keyboard"></i> Piano</td>
+                                    <td><span class="badge badge-pendente">Pendente</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="Ver detalhes">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>17:00</td>
+                                    <td>Lucas Santos</td>
+                                    <td>Prof. Rafael</td>
+                                    <td><i class="fas fa-drum"></i> Bateria</td>
+                                    <td><span class="badge badge-confirmado">Confirmado</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="Ver detalhes">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Novos Alunos -->
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>Novos Alunos</h3>
+                        <a href="#alunos" class="view-all">Ver Todos</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Data Cadastro</th>
+                                    <th>Instrumento</th>
+                                    <th>Plano</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/aluno1.jpg" alt="Aluno">
+                                            <span>Fernanda Costa</span>
+                                        </div>
+                                    </td>
+                                    <td>15/01/2025</td>
+                                    <td>Guitarra</td>
+                                    <td><span class="badge badge-premium">Premium</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="Ver perfil">
+                                            <i class="fas fa-user"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/aluno2.jpg" alt="Aluno">
+                                            <span>Roberto Lima</span>
+                                        </div>
+                                    </td>
+                                    <td>14/01/2025</td>
+                                    <td>Violão</td>
+                                    <td><span class="badge badge-basico">Básico</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="Ver perfil">
+                                            <i class="fas fa-user"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ações Rápidas -->
+            <section class="quick-actions">
+                <h3>Ações Rápidas</h3>
+                <div class="actions-grid">
+                    <button class="action-card" onclick="abrirModalAgendamento()">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Nova Aula</span>
+                    </button>
+                    <button class="action-card" onclick="abrirModalAluno()">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Novo Aluno</span>
+                    </button>
+                    <button class="action-card" onclick="window.location.href='#relatorios'">
+                        <i class="fas fa-file-download"></i>
+                        <span>Gerar Relatório</span>
+                    </button>
+                    <button class="action-card" onclick="window.location.href='#financeiro'">
+                        <i class="fas fa-receipt"></i>
+                        <span>Nova Cobrança</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Inicializar gráficos ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAdminCharts();
+        });
+    </script>
+</body>
+</html>

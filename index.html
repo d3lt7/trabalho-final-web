@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StrumSage - Escola de Música</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo11.png" alt="Logo StrumSage">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                    <li><a href="pacotes.html"><i class="fas fa-box"></i> Pacotes</a></li>
+                    <li><a href="login.html"><i class="fas fa-user"></i> Login</a></li>
+                </ul>
+            </nav>
+            <div class="menu-mobile">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Desperte Seu Talento Musical</h1>
+            <p class="hero-subtitle">Aprenda música com os melhores professores em um ambiente acolhedor e profissional</p>
+            <div class="hero-buttons">
+                <a href="#aulas" class="btn-primary">Conhecer Aulas</a>
+                <a href="pacotes.html" class="btn-secondary">Ver Pacotes</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-music.jpg" alt="Instrumentos Musicais">
+        </div>
+    </section>
+
+    <!-- Seção de Benefícios -->
+    <section class="beneficios">
+        <div class="container">
+            <h2 class="section-title">Por que escolher a StrumSage?</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Professores Qualificados</h3>
+                    <p>Músicos profissionais com formação especializada e experiência no ensino</p>
+                </div>
+                <div class="beneficio-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Aulas Personalizadas</h3>
+                    <p>Metodologia adaptada ao seu nível e objetivos musicais</p>
+                </div>
+                <div class="beneficio-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Diversos Instrumentos</h3>
+                    <p>Violão, guitarra, piano, bateria, baixo e muito mais</p>
+                </div>
+                <div class="beneficio-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Horários Flexíveis</h3>
+                    <p>Agende suas aulas nos melhores horários para você</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Aulas -->
+    <section id="aulas" class="aulas-section">
+        <div class="container">
+            <h2 class="section-title">Conheça Nossos Professores</h2>
+            <p class="section-subtitle">Veja um pouco do trabalho dos nossos mestres em ação</p>
+            
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls poster="images/thumb-violao.jpg">
+                            <source src="video/violao.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3><i class="fas fa-guitar"></i> Aulas de Violão</h3>
+                        <p>Professor: Carlos Mendes</p>
+                        <p class="video-description">Do básico ao avançado, aprenda violão com técnicas clássicas e populares</p>
+                        <a href="pacotes.html" class="btn-outline">Saiba Mais</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls poster="images/thumb-teclado.jpg">
+                            <source src="video/teclado.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3><i class="fas fa-keyboard"></i> Aulas de Teclado</h3>
+                        <p>Professora: Ana Silva</p>
+                        <p class="video-description">Domine o teclado e piano com teoria musical e prática</p>
+                        <a href="pacotes.html" class="btn-outline">Saiba Mais</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls poster="images/thumb-bateria.jpg">
+                            <source src="video/bateria.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3><i class="fas fa-drum"></i> Aulas de Bateria</h3>
+                        <p>Professor: Rafael Santos</p>
+                        <p class="video-description">Ritmo, coordenação e técnica para todos os estilos musicais</p>
+                        <a href="pacotes.html" class="btn-outline">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Estatísticas -->
+    <section class="estatisticas">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>500+</h3>
+                    <p>Alunos Formados</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>15</h3>
+                    <p>Professores Especializados</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-music"></i>
+                    <h3>12</h3>
+                    <p>Instrumentos Disponíveis</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <h3>10</h3>
+                    <p>Anos de Experiência</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Pronto para começar sua jornada musical?</h2>
+            <p>Agende uma aula experimental gratuita e conheça nossa metodologia</p>
+            <a href="login.html" class="btn-primary btn-large">Agendar Aula Grátis</a>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="depoimentos">
+        <div class="container">
+            <h2 class="section-title">O que nossos alunos dizem</h2>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Sempre quis aprender violão e na StrumSage encontrei o método perfeito. Em poucos meses já estava tocando minhas músicas favoritas!"</p>
+                    <div class="depoimento-autor">
+                        <img src="images/aluno1.jpg" alt="Maria">
+                        <div>
+                            <h4>Maria Oliveira</h4>
+                            <span>Aluna de Violão</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="depoimento-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Os professores são excepcionais! A didática é clara e o ambiente é muito acolhedor. Recomendo para todos os níveis."</p>
+                    <div class="depoimento-autor">
+                        <img src="images/aluno2.jpg" alt="João">
+                        <div>
+                            <h4>João Pedro</h4>
+                            <span>Aluno de Bateria</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="depoimento-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Minha filha adora as aulas de piano! A professora é muito paciente e carinhosa. Vejo a evolução dela a cada semana."</p>
+                    <div class="depoimento-autor">
+                        <img src="images/aluno3.jpg" alt="Ana">
+                        <div>
+                            <h4>Ana Costa</h4>
+                            <span>Mãe de Aluna</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo11.png" alt="StrumSage">
+                    </div>
+                    <p>Transformando vidas através da música desde 2015</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="pacotes.html">Pacotes</a></li>
+                        <li><a href="login.html">Área do Aluno</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Nossos Cursos</h3>
+                    <ul>
+                        <li><a href="#">Violão</a></li>
+                        <li><a href="#">Guitarra</a></li>
+                        <li><a href="#">Piano/Teclado</a></li>
+                        <li><a href="#">Bateria</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua da Música, 123 - Centro</p>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@strumsage.com</p>
+                    <p><i class="fas fa-clock"></i> Seg-Sex: 8h-20h | Sáb: 8h-14h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 StrumSage. Todos os direitos reservados. | <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+Principais melhorias no index.html:
