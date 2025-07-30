@@ -830,5 +830,3 @@ window.filtrarPacotes = filtrarPacotes;
 window.toggleFaq = toggleFaq;
 window.toggleSidebar = toggleSidebar;
 window.abrirChat = abrirChat;
-
-
