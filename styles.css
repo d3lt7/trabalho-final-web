@@ -1,5 +1,5 @@
 * {
-    margin: auto;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -670,7 +670,7 @@ nav a.active {
 
 /* ===== USER DASHBOARD ===== */
 .user-dashboard .user-header {
-    background-color: var(--dark-color);
+    background-color: var(--light-color);
     box-shadow: var(--shadow-md);
     position: fixed;
     width: 100%;
