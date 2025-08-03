@@ -289,6 +289,30 @@ function fecharModalAgendarAula() {
 
 async function handleAgendamento(event) {
     event.preventDefault();
+}
+function enviarEmailConfirmacao(nome, email, horario) {
+    const templateParams = {
+        to_name: nome,
+        to_email: email,
+        horario: horario
+    };
+
+    emailjs.send('service_7aqgdad', 'template_dyzv52k', templateParams) // 🔁 Substitua aqui
+        .then(response => {
+            console.log('✅ Email enviado com sucesso:', response.status, response.text);
+            showSuccess('Confirmação enviada por e-mail!');
+        }, error => {
+            console.error('❌ Erro ao enviar e-mail:', error);
+            showError('Erro ao enviar e-mail de confirmação.');
+        });
+
+
+    
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    
+    async function handleAgendamento(event) {
+    event.preventDefault();
     
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
@@ -316,10 +340,12 @@ async function handleAgendamento(event) {
             showError('Erro ao agendar aula');
         }
     } catch (error) {
+        console.error('Erro ao agendar:', error);
         showError('Erro ao agendar aula. Tente novamente.');
     } finally {
         hideLoading();
     }
+}
 }
 
 function selectTimeSlot(event) {
