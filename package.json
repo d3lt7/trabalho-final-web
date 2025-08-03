@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "@sendgrid/mail": "^8.1.5"
   },
@@ -7,10 +8,28 @@
   "version": "1.0.0",
   "main": "script.js",
   "devDependencies": {},
+=======
+  "name": "agendamento-api",
+  "version": "1.0.0",
+  "main": "index.js",
+>>>>>>> 4970b5c (Atualiza sobre.html e styles.css com novas alterações)
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
+<<<<<<< HEAD
   "author": "Helberth Renan Gomes de Sousa",
   "license": "MIT"
+=======
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@emailjs/nodejs": "^5.0.2",
+    "@sendgrid/mail": "^8.1.5",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+>>>>>>> 4970b5c (Atualiza sobre.html e styles.css com novas alterações)
 }
