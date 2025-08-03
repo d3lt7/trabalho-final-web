@@ -289,7 +289,41 @@ function fecharModalAgendarAula() {
 
 async function handleAgendamento(event) {
     event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    if (!selectedTimeSlot) {
+        showError('Por favor, selecione um horário');
+        return;
+    }
+
+    data.horario = selectedTimeSlot;
+
+    try {
+        showLoading();
+
+        const response = await simulateAPICall({
+            action: 'agendar',
+            data: data
+        });
+
+        if (response.success) {
+            showSuccess('Aula agendada com sucesso!');
+            fecharModalAgendamento();
+            enviarEmailConfirmacao(data.nome, data.email, data.horario); // ✅ envia email
+            atualizarListaAulas();
+        } else {
+            showError('Erro ao agendar aula');
+        }
+    } catch (error) {
+        console.error('Erro ao agendar:', error);
+        showError('Erro ao agendar aula. Tente novamente.');
+    } finally {
+        hideLoading();
+    }
 }
+
 function enviarEmailConfirmacao(nome, email, horario) {
     const templateParams = {
         to_name: nome,
@@ -834,6 +868,7 @@ function loadInitialData() {
         Notification.requestPermission();
     }
 }
+
 
 // ===== EXPORTAR FUNÇÕES GLOBAIS =====
 window.toggleMobileMenu = toggleMobileMenu;
